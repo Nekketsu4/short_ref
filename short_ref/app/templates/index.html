@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Short URL</title>
+    {% load django_bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <h1 class="container">Тестовое задание</h1>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+
+<style>
+    @media (min-width: 1200px) {
+  .container {
+    width: 900px;
+  }
+}
+</style>

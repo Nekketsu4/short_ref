@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content %}
+    <form action="" method="post">
+        <div class="container border py-3 my-5">
+            <label class="form-label h3">Введите ссылку</label>
+            {% csrf_token %}
+            {{ form.as_p }}
+        <input type="submit" value="Получить ссылку" class="btn btn-primary">
+        </div>
+        <div class="container border py-3 my-5">
+            <a href="{{ url.url }}"> {{ url.short_url }}</a>
+        </div>
+        <div class="container">
+            <a href="{% url 'app:list_urls' %}" class="btn btn-primary" role="button">Список ссылок</a>
+
+    </div>
+    </form>
+{% endblock %}
